@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .btn-group {
+            text-align: center;
+        }
+
+        .btn-group button {
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="btn-group">
+    <button onclick="popAlert()">alert</button>
+    <button onclick="popConfirm()">confirm</button>
+    <button onclick="popOpen()">open</button>
+    <button onclick="popPrompt()">prompt</button>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/pop.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    function popAlert() {
+        pop.alert('恭喜你答对了~', 'success', function () {
+            pop.alert('O(∩_∩)O哈哈~，逗你的', 'smile');
+        });
+    }
+    function popConfirm() {
+        pop.confirm('你确定要忍心离开我吗？', function () {
+            pop.confirm('这样我会伤心死的');
+        });
+    }
+    function popOpen() {
+        pop.open('你确定想清楚要娶我了？', 'warning', function () {
+            pop.open('是的，我一定要娶你', 'smile', function () {
+                pop.open('对不起，我不能嫁给你', 'fail', function () {
+                    pop.open('MMP');
+                });
+            });
+        });
+    }
+    function popPrompt() {
+        pop.prompt('我可以显示在指定元素上面哦，只要第二个参数设置为该元素id或类就行', 3000);
+    }
+</script>
+</body>
+</html>
